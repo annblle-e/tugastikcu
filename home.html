@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WibuShop</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f0f0f0;
+      }
+
+      .container {
+        text-align: center;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      img {
+        width: 300px;
+        height: auto;
+      }
+
+      h1 {
+        font-size: 36px;
+        color: #333;
+        margin-bottom: 10px;
+      }
+
+      p {
+        font-size: 18px;
+        color: #777;
+        margin-bottom: 20px;
+      }
+
+      #menu button {
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        padding: 15px 30px;
+        font-size: 18px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+      }
+
+      #menu button:hover {
+        background-color: #45a049;
+        transform: scale(1.1);
+      }
+
+      #menu button:active {
+        animation: pop 0.5s forwards;
+      }
+
+      @keyframes pop {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(0.9);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+
+      @media (max-width: 600px) {
+        h1 {
+          font-size: 28px;
+        }
+
+        p {
+          font-size: 16px;
+        }
+
+        #menu button {
+          padding: 10px 20px;
+          font-size: 16px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1 id="judul">WibuShop</h1>
+      <p id="gatau">Tempat terbaik buat beli makanan dari genshen empak nyam 😋</p>
+      <img src="./zhongliwaw.gif" alt="pacarsandra" />
+      <br>
+      <a href="./menu.html" id="menu">
+        <br>
+        <button><b>GASKEUNN BOS</b></button>
+      </a>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,766 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WibuShop Menu</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+        background-color: #f9f9f9;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+        text-align: center;
+      }
+
+
+
+      h2 {
+        color: #6f92d3;
+        margin-bottom: -30px;
+      }
+
+      h1 {
+        font-size: 40px;
+        color: #333;
+        margin-bottom: 20px;
+      }
+
+      #divider {
+        text-align: left;
+      }
+
+      .menu-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+        padding: 20px;
+        text-align: left;
+      }
+
+      .menu-item img {
+        max-width: 150px;
+        border-radius: 10px;
+      }
+
+      .menu-item-info {
+        flex-grow: 1;
+        margin-left: 20px;
+      }
+
+      .menu-item-info h2 {
+        font-size: 24px;
+        color: #333;
+        margin: 0;
+      }
+
+      .menu-item-info p {
+        font-size: 16px;
+        color: #777;
+        margin: 10px 0;
+      }
+
+      .menu-item-price {
+        font-size: 24px;
+        color: #4CAF50;
+      }
+
+      @media (max-width: 768px) {
+        .menu-item {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .menu-item img {
+          margin-bottom: 15px;
+        }
+
+        .menu-item-info {
+          margin-left: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1 id="judul">WibuShop Menu</h1>
+      <p id="gatau">ni boss list makanan dari genshen empak, cari sono yang kalian maw</p>
+      <input type="text" id="search" placeholder="Cari makanan genshen apa yak..." onkeyup="searchMenu()" style="padding: 10px; width: 100%; max-width: 300px; margin-bottom: 20px; border-radius: 5px; border: 1px solid #ccc;">
+
+      <script>
+        function searchMenu() {
+          const input = document.getElementById('search');
+          const filter = input.value.toLowerCase();
+          const menuItems = document.querySelectorAll('.menu-item');
+          let hasVisibleItems = false;
+
+          menuItems.forEach(item => {
+            const title = item.querySelector('h2').textContent.toLowerCase();
+            if (title.includes(filter)) {
+              item.style.display = '';
+              hasVisibleItems = true; 
+            } else {
+              item.style.display = 'none';
+            }
+          });
+
+          const divider = document.getElementById('divider');
+          if (hasVisibleItems) {
+            divider.style.display = '';
+          } else {
+            divider.style.display = 'none';
+          }
+        }
+      </script>
+
+      <br><br><br>
+      <div id="divider">
+        <hr>
+        <h2>Makanan Wilayah</h2>
+        <h1>Mondstadt</h1>
+      </div>
+
+      <!-- barang 1 -->
+      <div class="menu-item">
+        <img src="./img/1.webp">
+        <div class="menu-item-info">
+          <h2>Mondstadt Grilled Fish</h2>
+          <p>Ikan dipanggang dengan api sedang hingga matang, sehingga benar-benar kering dan renyah.</p>
+        </div>
+        <div class="menu-item-price">Rp 30.000</div>
+      </div>
+
+      <!-- barang 2 -->
+      <div class="menu-item">
+        <img src="./img/2.webp" alt="pill em up">
+        <div class="menu-item-info">
+          <h2>Pill em up</h2>
+          <p>Hidangan yang kaya akan daging.</p>
+        </div>
+        <div class="menu-item-price">Rp 150.000</div>
+      </div>
+
+      <!-- barang 3 -->
+      <div class="menu-item">
+        <img src="./img/3.webp" alt="Northern Apple Stew">
+        <div class="menu-item-info">
+          <h2>Northern Apple Stew</h2>
+          <p>Hidangan dengan daging panggang dan apel.</p>
+        </div>
+        <div class="menu-item-price">Rp 120.000</div>
+      </div>
+
+      <!-- barang 4 -->
+      <div class="menu-item">
+        <img src="./img/4.webp" alt="Barbatos Ratatouli">
+        <div class="menu-item-info">
+          <h2>Barbatos Ratatouli</h2>
+          <p>Sup kental pedas seperti ini selalu dapat memberikan Anda rasa kepuasan yang nyata dan tak tertandingi.</p>
+        </div>
+        <div class="menu-item-price">Rp 80.000</div>
+      </div>
+
+      <!-- barang 5 -->
+      <div class="menu-item">
+        <img src="./img/5.webp" alt="mint jelly">
+        <div class="menu-item-info">
+          <h2>Mint jelly</h2>
+          <p>Saat Anda menelannya, rasa segar mint yang samar akan membuat Anda merasa segar</p>
+        </div>
+        <div class="menu-item-price">Rp 25.000</div>
+      </div>
+
+      <!-- barang 6 -->
+      <div class="menu-item">
+        <img src="./img/6.webp" alt="Cold Cut Platter">
+        <div class="menu-item-info">
+          <h2>Cold Cut Platter</h2>
+          <p>Sepiring daging potong dingin yang lezat.</p>
+        </div>
+        <div class="menu-item-price">Rp 165.000</div>
+      </div>
+        
+      <!-- barang 7 -->
+      <div class="menu-item">
+        <img src="./img/7.webp" alt="Calla Lily Seafood Soup">
+        <div class="menu-item-info">
+          <h2>Calla Lily Seafood Soup</h2>
+          <p>Sup seafood segar dengan rasa menyegarkan.</p>
+        </div>
+        <div class="menu-item-price">Rp 250.000</div>
+      </div>
+        
+      <!-- barang 8 -->
+      <div class="menu-item">
+        <img src="./img/8.webp" alt="Berry & Mint Burst">
+        <div class="menu-item-info">
+          <h2>Berry & Mint Burst</h2>
+          <p>Minuman segar dengan berry dan mint.</p>
+        </div>
+        <div class="menu-item-price">Rp 35.000</div>
+      </div>
+        
+      <!-- barang 9 -->
+      <div class="menu-item">
+        <img src="./img/9.webp" alt="Fruits of the Festival">
+        <div class="menu-item-info">
+          <h2>Fruits of the Festival</h2>
+          <p>Jus buah cerah yang menyegarkan.</p>
+        </div>
+        <div class="menu-item-price">Rp 35.000</div>
+      </div>
+        
+      <!-- barang 10 -->
+      <div class="menu-item">
+        <img src="./img/10.webp" alt="Wolfhook Juice">
+        <div class="menu-item-info">
+          <h2>Wolfhook Juice</h2>
+          <p>Minuman manis dengan jus Wolfhook.</p>
+        </div>
+        <div class="menu-item-price">Rp 35.000</div>
+      </div>
+
+    </div>
+  </body>
+</html>
+
+
+              <br>
+              <div id="divider">
+                <hr>
+                <h2>Makanan Wilayah</h2>
+                <h1>Sumeru</h1>
+            </div>
+        
+              <!-- barang 11 -->
+              <div class="menu-item">
+                <img src="./img/11.webp" alt="Sabz Meat Stew">
+                <div class="menu-item-info">
+                  <h2>Sabz Meat Stew</h2>
+                  <p>Semur daging dengan sayuran segar.</p>
+                </div>
+                <div class="menu-item-price">Rp 75.000</div>
+              </div>
+        
+              <!-- barang 12 -->
+              <div class="menu-item">
+                <img src="./img/12.webp" alt="Fatteh">
+                <div class="menu-item-info">
+                  <h2>Fatteh</h2>
+                  <p>Roti panggang dengan kacang dan yoghurt.</p>
+                </div>
+                <div class="menu-item-price">Rp 55.000</div>
+              </div>
+        
+              <!-- barang 13 -->
+              <div class="menu-item">
+                <img src="./img/13.webp" alt="Pita Pocket">
+                <div class="menu-item-info">
+                  <h2>Pita Pocket</h2>
+                  <p>Roti dengan berbagai isian lezat.</p>
+                </div>
+                <div class="menu-item-price">Rp 50.000</div>
+              </div>
+        
+              <!-- barang 14 -->
+              <div class="menu-item">
+                <img src="./img/14.webp" alt="Biryani">
+                <div class="menu-item-info">
+                  <h2>Biryani</h2>
+                  <p>Nasi harum dengan daging dan bumbu.</p>
+                </div>
+                <div class="menu-item-price">Rp 60.000</div>
+              </div>
+        
+              <!-- barang 15 -->
+              <div class="menu-item">
+                <img src="./img/15.webp" alt="Ideal Circumstance">
+                <div class="menu-item-info">
+                  <h2>Ideal Circumstance</h2>
+                  <p>Sayuran dan daging yang dimasak sempurna.</p>
+                </div>
+                <div class="menu-item-price">Rp 150.000</div>
+              </div>
+        
+              <!-- barang 16 -->
+              <div class="menu-item">
+                <img src="./img/16.webp" alt="Butter Chicken">
+                <div class="menu-item-info">
+                  <h2>Butter Chicken</h2>
+                  <p>Ayam dalam saus mentega yang kental.</p>
+                </div>
+                <div class="menu-item-price">Rp 100.000</div>
+              </div>
+        
+              <!-- barang 17 -->
+              <div class="menu-item">
+                <img src="./img/17.webp" alt="Candied Ajilenakh Nut">
+                <div class="menu-item-info">
+                  <h2>Candied Ajilenakh Nut</h2>
+                  <p>Makanan penutup manis dan renyah.</p>
+                </div>
+                <div class="menu-item-price">Rp 50.000</div>
+              </div>
+        
+              <!-- barang 18 -->
+              <div class="menu-item">
+                <img src="./img/18.webp" alt="Padisarah Pudding">
+                <div class="menu-item-info">
+                  <h2>Padisarah Pudding</h2>
+                  <p>Puding manis dengan kelopak Padisarah.</p>
+                </div>
+                <div class="menu-item-price">Rp 45.000</div>
+              </div>
+        
+              <!-- barang 19 -->
+              <div class="menu-item">
+                <img src="./img/19.webp" alt="Panipuri">
+                <div class="menu-item-info">
+                  <h2>Panipuri</h2>
+                  <p>Makanan ringan renyah dengan saus segar.</p>
+                </div>
+                <div class="menu-item-price">Rp 55.000</div>
+              </div>
+        
+              <!-- barang 20 -->
+              <div class="menu-item">
+                <img src="./img/20.webp" alt="Scented Meat Balls">
+                <div class="menu-item-info">
+                  <h2>Scented Meat Balls</h2>
+                  <p>Bola daging giling yang digoreng renyah.</p>
+                </div>
+                <div class="menu-item-price">Rp 60.000</div>
+              </div>
+        
+              <br>
+              <div id="divider"><hr>
+<h2>Makanan Wilayah <h1>Natlan</h1></h2></div>
+              <!-- barang 21 -->
+              <div class="menu-item">
+                <img src="./img/21.webp" alt="Strength Tonic">
+                <div class="menu-item-info">
+                  <h2>Strength Tonic</h2>
+                  <p>Ramuan misterius untuk kekuatan tambahan.</p>
+                </div>
+                <div class="menu-item-price">Rp 25.000</div>
+              </div>
+        
+              <!-- barang 22 -->
+              <div class="menu-item">
+                <img src="./img/22.webp" alt="BBQ Beef Heart Skewers">
+                <div class="menu-item-info">
+                  <h2>BBQ Beef Heart Skewers</h2>
+                  <p>Daging sapi panggang yang menggugah selera.</p>
+                </div>
+                <div class="menu-item-price">Rp 50.000</div>
+              </div>
+        
+              <!-- barang 23 -->
+              <div class="menu-item">
+                <img src="./img/23.webp" alt="Cup O' Grainfruit">
+                <div class="menu-item-info">
+                  <h2>Cup O' Grainfruit</h2>
+                  <p>Snack Grainfruit yang manis dan berair.</p>
+                </div>
+                <div class="menu-item-price">Rp 55.000</div>
+              </div>
+        
+              <!-- barang 24 -->
+              <div class="menu-item">
+                <img src="./img/24.webp" alt="Blazed Meat Stew">
+                <div class="menu-item-info">
+                  <h2>Blazed Meat Stew</h2>
+                  <p>Semur daging pedas yang nikmat.</p>
+                </div>
+                <div class="menu-item-price">Rp 120.000</div>
+              </div>
+        
+              <!-- barang 25 -->
+              <div class="menu-item">
+                <img src="./img/25.webp" alt="Grainfruit Chips">
+                <div class="menu-item-info">
+                  <h2>Grainfruit Chips</h2>
+                  <p>Keripik renyah dengan taburan keju.</p>
+                </div>
+                <div class="menu-item-price">Rp 25.000</div>
+              </div>
+        
+              <!-- barang 26 -->
+              <div class="menu-item">
+                <img src="./img/26.webp" alt="Puff Pops">
+                <div class="menu-item-info">
+                  <h2>Puff Pops</h2>
+                  <p>Camilan berbagai rasa yang mengejutkan.</p>
+                </div>
+                <div class="menu-item-price">Rp 30.000</div>
+              </div>
+        
+              <!-- barang 27 -->
+              <div class="menu-item">
+                <img src="./img/27.webp" alt="Xocoatl">
+                <div class="menu-item-info">
+                  <h2>Xocoatl</h2>
+                  <p>Cokelat panas yang kaya rasa.</p>
+                </div>
+                <div class="menu-item-price">Rp 40.000</div>
+              </div>
+        
+              <!-- barang 28 -->
+              <div class="menu-item">
+                <img src="./img/28.webp" alt="Crispy Sand">
+                <div class="menu-item-info">
+                  <h2>Crispy Sand</h2>
+                  <p>Keripik gurih dengan rasa asin.</p>
+                </div>
+                <div class="menu-item-price">Rp 20.000</div>
+              </div>
+        
+              <!-- barang 29 -->
+              <div class="menu-item">
+                <img src="./img/29.webp" alt="Golden Fish Curry">
+                <div class="menu-item-info">
+                  <h2>Golden Fish Curry</h2>
+                  <p>Kuah ikan kari yang pedas dan harum.</p>
+                </div>
+                <div class="menu-item-price">Rp 95.000</div>
+              </div>
+        
+              <!-- barang 30 -->
+              <div class="menu-item">
+                <img src="./img/30.webp" alt="Mushroom Risotto">
+                <div class="menu-item-info">
+                  <h2>Mushroom Risotto</h2>
+                  <p>Risotto lembut dengan jamur segar.</p>
+                </div>
+                <div class="menu-item-price">Rp 80.000</div>
+              </div>
+
+              <!--PEGEL SAYA AWAKKKKKKKK TLONG-->
+              <br>
+              <div id="divider"><hr>
+<h2>Makanan Wilayah <h1>Li Yue</h1></h2></div>
+                    <!-- barang 31 -->
+      <div class="menu-item">
+        <img src="./img/31.webp" alt="Adeptus' Temptation">
+        <div class="menu-item-info">
+          <h2>Adeptus' Temptation</h2>
+          <p>Masakan rumit Liyue dengan bahan pilihan.</p>
+        </div>
+        <div class="menu-item-price">Rp 315.000</div>
+      </div>
+
+      <!-- barang 32 -->
+      <div class="menu-item">
+        <img src="./img/32.webp" alt="Bamboo Shoot Soup">
+        <div class="menu-item-info">
+          <h2>Bamboo Shoot Soup</h2>
+          <p>Sup daging dengan cita rasa khas.</p>
+        </div>
+        <div class="menu-item-price">Rp 156.000</div>
+      </div>
+
+      <!-- barang 33 -->
+      <div class="menu-item">
+        <img src="./img/33.webp" alt="Black-Back Perch Stew">
+        <div class="menu-item-info">
+          <h2>Black-Back Perch Stew</h2>
+          <p>Hidangan ikan rebus yang lezat.</p>
+        </div>
+        <div class="menu-item-price">Rp 76.500</div>
+      </div>
+
+      <!-- barang 34 -->
+      <div class="menu-item">
+        <img src="./img/34.webp" alt="Golden Crab">
+        <div class="menu-item-info">
+          <h2>Golden Crab</h2>
+          <p>Kepiting goreng dengan rasa kaya.</p>
+        </div>
+        <div class="menu-item-price">Rp 184.000</div>
+      </div>
+
+      <!-- barang 35 -->
+      <div class="menu-item">
+        <img src="./img/35.webp" alt="Almond Tofu">
+        <div class="menu-item-info">
+          <h2>Almond Tofu</h2>
+          <p>Puding lembut dengan aroma almond.</p>
+        </div>
+        <div class="menu-item-price">Rp 46.300</div>
+      </div>
+
+      <!-- barang 36 -->
+      <div class="menu-item">
+        <img src="./img/36.webp" alt="Chenyu Brew">
+        <div class="menu-item-info">
+          <h2>Chenyu Brew</h2>
+          <p>Teh biasa dari Liyue.</p>
+        </div>
+        <div class="menu-item-price">Rp 27.000</div>
+      </div>
+
+      <!-- barang 37 -->
+      <div class="menu-item">
+        <img src="./img/37.webp" alt="Fullmoon Egg">
+        <div class="menu-item-info">
+          <h2>Fullmoon Egg</h2>
+          <p>Penganan telur kukus tradisional.</p>
+        </div>
+        <div class="menu-item-price">Rp 16.000</div>
+      </div>
+
+      <!-- barang 38 -->
+      <div class="menu-item">
+        <img src="./img/38.webp" alt="Golden Shrimp Balls">
+        <div class="menu-item-info">
+          <h2>Golden Shrimp Balls</h2>
+          <p>Udang goreng tepung yang renyah.</p>
+        </div>
+        <div class="menu-item-price">Rp 105.000</div>
+      </div>
+
+      <!-- barang 39 -->
+      <div class="menu-item">
+        <img src="./img/39.webp" alt="Fine Tea, Full Moon">
+        <div class="menu-item-info">
+          <h2>Fine Tea, Full Moon</h2>
+          <p>Kue teh dengan kuning telur.</p>
+        </div>
+        <div class="menu-item-price">Rp 29.000</div>
+      </div>
+
+      <!-- barang 40 -->
+      <div class="menu-item">
+        <img src="./img/40.webp" alt="Noodles with Mountain Delicacies">
+        <div class="menu-item-info">
+          <h2>Noodles with Mountain Delicacies</h2>
+          <p>Mie dengan saus daging dan sayuran.</p>
+        </div>
+        <div class="menu-item-price">Rp 39.600</div>
+      </div>
+
+      <br>
+      <div id="divider"><hr>
+      <h2>Makanan Wilayah <h1>Inazuma</h1></h2></div>
+
+      <!-- barang 41 -->
+      <div class="menu-item">
+        <img src="./img/41.webp" alt="Invigorating Kitty Meal">
+        <div class="menu-item-info">
+          <h2>Invigorating Kitty Meal</h2>
+          <p>Hidangan manis namun kurang bumbu.</p>
+        </div>
+        <div class="menu-item-price">Rp 52.000</div>
+      </div>
+
+      <!-- barang 42 -->
+      <div class="menu-item">
+        <img src="./img/42.webp" alt="Tricolor Dango">
+        <div class="menu-item-info">
+          <h2>Tricolor Dango</h2>
+          <p>Camilan ketan lembut berwarna-warni.</p>
+        </div>
+        <div class="menu-item-price">Rp 16.500</div>
+      </div>
+
+      <!-- barang 43 -->
+      <div class="menu-item">
+        <img src="./img/43.webp" alt="Omelette Rice">
+        <div class="menu-item-info">
+          <h2>Omelette Rice</h2>
+          <p>Nasi dibungkus telur dengan saus.</p>
+        </div>
+        <div class="menu-item-price">Rp 36.000</div>
+      </div>
+
+      <!-- barang 44 -->
+      <div class="menu-item">
+        <img src="./img/44.webp" alt="Rainbow Aster">
+        <div class="menu-item-info">
+          <h2>Rainbow Aster</h2>
+          <p>Hidangan tanpa produk kacang.</p>
+        </div>
+        <div class="menu-item-price">Rp 24.000</div>
+      </div>
+
+      <!-- barang 45 -->
+      <div class="menu-item">
+        <img src="./img/45.webp" alt="Dango Milk">
+        <div class="menu-item-info">
+          <h2>Dango Milk</h2>
+          <p>Dango lengket dalam susu manis.</p>
+        </div>
+        <div class="menu-item-price">Rp 18.000</div>
+      </div>
+
+      <!-- barang 46 -->
+      <div class="menu-item">
+        <img src="./img/46.webp" alt="Sashimi Platter">
+        <div class="menu-item-info">
+          <h2>Sashimi Platter</h2>
+          <p>Hidangan laut segar dan lembut.</p>
+        </div>
+        <div class="menu-item-price">Rp 256.000</div>
+      </div>
+
+      <!-- barang 47 -->
+      <div class="menu-item">
+        <img src="./img/47.webp" alt="Tonkotsu Ramen">
+        <div class="menu-item-info">
+          <h2>Tonkotsu Ramen</h2>
+          <p>Mie panas dengan daging lembut.</p>
+        </div>
+        <div class="menu-item-price">Rp 49.000</div>
+      </div>
+
+      <!-- barang 48 -->
+      <div class="menu-item">
+        <img src="./img/48.webp" alt="Sakura Mochi">
+        <div class="menu-item-info">
+          <h2>Sakura Mochi</h2>
+          <p>Camilan lembut dengan daun hijau.</p>
+        </div>
+        <div class="menu-item-price">Rp 14.500</div>
+      </div>
+
+      <!-- barang 49 -->
+      <div class="menu-item">
+        <img src="./img/49.webp" alt="Soba Noodle">
+        <div class="menu-item-info">
+          <h2>Soba Noodle</h2>
+          <p>Mie soba rebus yang kenyal.</p>
+        </div>
+        <div class="menu-item-price">Rp 34.000</div>
+      </div>
+
+      <!-- barang 50 -->
+      <div class="menu-item">
+        <img src="./img/50.webp" alt="Sweet Shrimp Sushi">
+        <div class="menu-item-info">
+          <h2>Sweet Shrimp Sushi</h2>
+          <p>Hidangan udang manis di atas nasi.</p>
+        </div>
+        <div class="menu-item-price">Rp 16.500</div>
+      </div>
+
+      <br>
+      <div id="divider"><hr>
+      <h2>Makanan Wilayah <h1>Fontaine</h1></h2></div>
+      
+      <!-- barang 51 -->
+      <div class="menu-item">
+        <img src="./img/51.webp" alt="La Lettre a Focalors">
+        <div class="menu-item-info">
+          <h2>La Lettre a Focalors</h2>
+          <p>Kue persegi panjang yang kecil.</p>
+        </div>
+        <div class="menu-item-price">Rp 41.000</div>
+      </div>
+
+      <!-- barang 52 -->
+      <div class="menu-item">
+        <img src="./img/52.webp" alt="Rainbow Macarons">
+        <div class="menu-item-info">
+          <h2>Rainbow Macarons</h2>
+          <p>Kue bulat berwarna-warni yang manis.</p>
+        </div>
+        <div class="menu-item-price">Rp 69.000</div>
+      </div>
+
+      <!-- barang 53 -->
+      <div class="menu-item">
+        <img src="./img/53.webp" alt="Fontinalia Mousse">
+        <div class="menu-item-info">
+          <h2>Fontinalia Mousse</h2>
+          <p>Mousse berbentuk kuncup bunga.</p>
+        </div>
+        <div class="menu-item-price">Rp 54.000</div>
+      </div>
+
+      <!-- barang 54 -->
+      <div class="menu-item">
+        <img src="./img/54.webp" alt="Fruity Trio">
+        <div class="menu-item-info">
+          <h2>Fruity Trio</h2>
+          <p>Makanan penutup dengan tiga rasa buah.</p>
+        </div>
+        <div class="menu-item-price">Rp 258.000</div>
+      </div>
+
+      <!-- barang 55 -->
+      <div class="menu-item">
+        <img src="./img/55.webp" alt="Bulle Souffle">
+        <div class="menu-item-info">
+          <h2>Bulle Souffle</h2>
+          <p>Kue kecil dalam kulit buah Bulle.</p>
+        </div>
+        <div class="menu-item-price">Rp 37.000</div>
+      </div>
+
+      <!-- barang 56 -->
+      <div class="menu-item">
+        <img src="./img/56.webp" alt="Coffee Bavarois">
+        <div class="menu-item-info">
+          <h2>Coffee Bavarois</h2>
+          <p>Kue lezat dengan rasa dingin.</p>
+        </div>
+        <div class="menu-item-price">Rp 23.000</div>
+      </div>
+
+      <!-- barang 57 -->
+      <div class="menu-item">
+        <img src="./img/57.webp" alt="Pate de Fruit">
+        <div class="menu-item-info">
+          <h2>Pate de Fruit</h2>
+          <p>Permen kenyal rasa buah yang manis.</p>
+        </div>
+        <div class="menu-item-price">Rp 51.000</div>
+      </div>
+
+      <!-- barang 58 -->
+      <div class="menu-item">
+        <img src="./img/58.webp" alt="Blubber Profiterole">
+        <div class="menu-item-info">
+          <h2>Blubber Profiterole</h2>
+          <p>Isi krim dalam kulit yang renyah.</p>
+        </div>
+        <div class="menu-item-price">Rp 47.000</div>
+      </div>
+
+      <!-- barang 59 -->
+      <div class="menu-item">
+        <img src="./img/59.webp" alt="Pure Water">
+        <div class="menu-item-info">
+          <h2>Pure Water</h2>
+          <p>Ramuan kekuatan murni dari ahli ramuan.</p>
+        </div>
+        <div class="menu-item-price">Rp 14.000</div>
+      </div>
+
+      <!-- barang 60 -->
+      <div class="menu-item">
+        <img src="./img/60.webp" alt="A Magical Mix">
+        <div class="menu-item-info">
+          <h2>A Magical Mix</h2>
+          <p>Minuman istimewa dalam botol kecil.</p>
+        </div>
+        <div class="menu-item-price">Rp 16.000</div>
+      </div>
+
+        
+
+      
+
+    </div>
+  </body>
+</html>
